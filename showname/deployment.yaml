@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: showname
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: showname
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: showname
+    spec:
+      containers:
+      - image: gcr.io/neogenesis-1/showname:v1
+        name: showname
+        ports:
+        - containerPort: 8001
+        env:
+        - name: JAEGER_SERVICE_NAME
+          value: showname
+        - name: JAEGER_AGENT_HOST   # NOTE: Point to the Agent daemon on the Node
+          valueFrom:
+            fieldRef:
+              fieldPath: status.hostIP
+        - name: JAEGER_AGENT_PORT
+          value: "6831"
