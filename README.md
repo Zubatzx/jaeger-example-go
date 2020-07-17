@@ -23,3 +23,13 @@ Available url:
 3. Check Jaeger UI for output
 
 
+
+Credits:
+---
+- https://medium.com/@masroor.hasan/tracing-infrastructure-with-jaeger-on-kubernetes-6800132a677
+- https://medium.com/opentracing/take-opentracing-for-a-hotrod-ride-f6e3141f7941
+- https://medium.com/velotio-perspectives/a-comprehensive-tutorial-to-implementing-opentracing-with-jaeger-a01752e1a8ce
+- https://medium.com/@carlosedp/instrumenting-go-for-tracing-c5bdabe1fc81
+- https://github.com/jaegertracing/jaeger-kubernetes
+- https://github.com/jaegertracing/jaeger/tree/master/examples/hotrod
+- https://github.com/yurishkuro/opentracing-tutorial
