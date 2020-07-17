@@ -48,10 +48,17 @@ func New(mysql *sqlx.DB, logger jaegerLog.Factory) Data {
 		logger: logger,
 	}
 
-	d.tracer, _ = tracing.Init("mysql", logger)
+	d.initTracer()
 	d.initStmt()
 
 	return d
+}
+
+func (d *Data) initTracer() {
+	// Initialize database tracer
+	tracer, _ := tracing.Init("mysql", d.logger)
+
+	d.tracer = tracer
 }
 
 func (d *Data) initStmt() {
