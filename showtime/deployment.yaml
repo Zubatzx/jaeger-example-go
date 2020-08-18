@@ -24,4 +24,4 @@ spec:
             fieldRef:
               fieldPath: status.hostIP
         - name: JAEGER_AGENT_PORT
-          value: "6831"
+          value: 6831
