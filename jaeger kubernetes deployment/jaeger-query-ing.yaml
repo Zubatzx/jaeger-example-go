@@ -1,0 +1,26 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    cert-manager.io/issuer: letsencrypt-prod
+    kubernetes.io/ingress.class: nginx
+    kubernetes.io/tls-acme: "true"
+  name: jaeger
+  namespace: jaeger
+spec:
+  rules:
+  - host: jaeger.phoras.pharmaalpha.co
+    http:
+      paths:
+      - backend:
+          serviceName: jaeger-query
+          servicePort: 80
+  tls:
+  - hosts:
+    - jaeger.phoras.pharmaalpha.co
+    secretName: tls-phoras-pharmaalpha-co-p
+status:
+  loadBalancer:
+    ingress:
+    - ip: 12.34.567.890
+

@@ -1,0 +1,12 @@
+1. gcloud auth login -> utk login
+2. gcloud config set core/project project_id -> untuk pindah project
+3. gcloud container clusters get-credentials nama_cluster -> untuk pindah cluster
+4. kubectl create namespace nama_namespace -> untuk buat namespace
+
+
+5. kubectl apply -f elasticsearch-configmap.yaml
+6. kubectl apply -f elasticsearch-deployment.yaml
+7. kubectl apply -f jaegerdeployment.yaml
+8. kubectl apply -f jaeger-query-ing.yaml #ubah isi file ini sesuai cluster ip dari Load Balancing dan nama host yang diinginkan
+
+Nb: Check cluster ip di GCP -> Network Services -> Load Balancing
